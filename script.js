@@ -28,6 +28,7 @@ const categoryClicked = () => {
       const array = [];
       array.push(selectCategory);
       addPetsTitles(array);
+      captureImage();
 
       selects.forEach((select) => select.disabled = false);
       addOptionsToSelects();
@@ -107,8 +108,6 @@ const addImages = (arrayCategory, category) => {
     div.appendChild(image);
     locationOfImages.appendChild(div);
   });
-  
-  captureImage();
 }
 
 // Captura o id do elemento da imagem clicada
@@ -153,6 +152,8 @@ const addInfo = (id, className) => {
   colorInfo.innerText = `Cor: ${object.color}`;
   sizeInfo.innerText = `Porte: ${object.size}`;
   temperamentInfo.innerText = `Temperamento: ${object.temperament}`;
+
+  addToForm();
 }
 
 // Limpa os títulos da página
@@ -184,13 +185,37 @@ const filterPets = () => {
       clearMainImages();
 
       addImages(arrayNewPets, selectedCategory);
+      captureImage();
     });
   });
 }
+
+// Adiciona input e botão no form
+const addToForm = () => {
+  const form = document.querySelector('form');
+
+  form.innerHTML = '';
+
+  const input = document.createElement('input');
+  const button = document.createElement('button');
+
+  form.id = 'form';
+  input.id = 'input';
+  input.type = 'input';
+  input.placeholder = 'Digite seu e-mail aqui';
+  button.type = 'submit';
+  button.id = 'button';
+  button.innerText = 'Adotar';
+
+  form.appendChild(input);
+  form.appendChild(button);
+}
+
 
 window.onload = () => {
   loops(categories);
   categoryClicked();
   addPetsTitles(categories);
+  captureImage();
   filterPets();
 }

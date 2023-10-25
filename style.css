@@ -100,3 +100,30 @@ select {
 #info div {
   margin-bottom: 7px;
 }
+
+form {
+  width: 80%;
+  text-align: center;
+  padding: 10px;
+}
+
+#form {
+  background-color: rgb(83, 81, 81);
+  display: flex;
+  justify-content: center;
+}
+
+input, button {
+  padding: 5px;
+}
+
+input {
+  flex-grow: 1;
+}
+
+button {
+  background-color: rgb(230, 149, 44);  
+  border: none;
+  border-radius: 5px;
+  margin-left: 20px;
+}
