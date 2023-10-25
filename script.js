@@ -137,12 +137,12 @@ const addInfo = (id, className) => {
   });
 
   pictureSelected.src = object.image;
-  nameInfo.innerText = object.name;
-  birthInfo.innerText = object.birth_date;
-  breedInfo.innerText = object.breed;
-  colorInfo.innerText = object.color;
-  sizeInfo.innerText = object.size;
-  temperamentInfo.innerText = object.temperament;
+  nameInfo.innerText = `Nome: ${object.name}`;
+  birthInfo.innerText = `Data de nascimento: ${object.birth_date}`;
+  breedInfo.innerText = `Raça: ${object.breed}`;
+  colorInfo.innerText = `Cor: ${object.color}`;
+  sizeInfo.innerText = `Porte: ${object.size}`;
+  temperamentInfo.innerText = `Temperamento: ${object.temperament}`;
 }
 
 
