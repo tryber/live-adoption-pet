@@ -110,15 +110,14 @@ const captureImage = () => {
       const capturedId = event.target.id;
       const capturedClass = event.target.className;
 
-      console.log(capturedId);
-      console.log(capturedClass);
+      addInfo(capturedId, capturedClass);
     });
   });
 }
 
 // Adiciona os valores das informações do pet em variáveis
 const arrayInfo = () => {
-  const pictureSelected = document.querySelector('#pictureSelected');
+  const pictureSelected = document.querySelector('#pictureSelected img');
   const nameInfo = document.querySelector('#nameInfo');
   const birthInfo = document.querySelector('#birthInfo');
   const breedInfo = document.querySelector('#breedInfo');
@@ -127,6 +126,23 @@ const arrayInfo = () => {
   const temperamentInfo = document.querySelector('#temperamentInfo');
 
   return [pictureSelected, nameInfo, birthInfo, breedInfo, colorInfo, sizeInfo, temperamentInfo];
+}
+
+// Adiciona as informações do pet selecionado no aside
+const addInfo = (id, className) => {
+  const [pictureSelected, nameInfo, birthInfo, breedInfo, colorInfo, sizeInfo, temperamentInfo] = arrayInfo();
+  
+  const object = pets[className].find((pet) => {
+    return pet.id === parseInt(id);
+  });
+
+  pictureSelected.src = object.image;
+  nameInfo.innerText = object.name;
+  birthInfo.innerText = object.birth_date;
+  breedInfo.innerText = object.breed;
+  colorInfo.innerText = object.color;
+  sizeInfo.innerText = object.size;
+  temperamentInfo.innerText = object.temperament;
 }
 
 
