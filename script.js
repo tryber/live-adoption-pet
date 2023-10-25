@@ -98,10 +98,35 @@ const addImages = (arrayCategory, category) => {
 
     div.appendChild(image);
     locationOfImages.appendChild(div);
-
-    console.log(div);
-    console.log(image);
   });
+}
+
+// Captura o id do elemento da imagem clicada
+const captureImage = () => {
+  const pictures = document.querySelectorAll('#pictures div img');
+  
+  pictures.forEach((picture) => {
+    picture.addEventListener('click', (event) => {
+      const capturedId = event.target.id;
+      const capturedClass = event.target.className;
+
+      console.log(capturedId);
+      console.log(capturedClass);
+    });
+  });
+}
+
+// Adiciona os valores das informações do pet em variáveis
+const arrayInfo = () => {
+  const pictureSelected = document.querySelector('#pictureSelected');
+  const nameInfo = document.querySelector('#nameInfo');
+  const birthInfo = document.querySelector('#birthInfo');
+  const breedInfo = document.querySelector('#breedInfo');
+  const colorInfo = document.querySelector('#colorInfo');
+  const sizeInfo = document.querySelector('#sizeInfo');
+  const temperamentInfo = document.querySelector('#temperamentInfo');
+
+  return [pictureSelected, nameInfo, birthInfo, breedInfo, colorInfo, sizeInfo, temperamentInfo];
 }
 
 
@@ -109,4 +134,5 @@ window.onload = () => {
   loops(categories);
   categoryClicked();
   addPetsTitles(categories);
+  captureImage();
 }
