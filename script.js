@@ -2,6 +2,7 @@ const category = document.querySelector('#category');
 const categories = Object.keys(pets).sort();
 const selects = document.querySelectorAll('select');
 const arrayOfSomeKeys = ['name', 'breed', 'color', 'size', 'temperament'];
+const locationOfImages = document.querySelector('#images');
 
 // Percorre o array com as categorias de pets
 const loops = (array) => array.forEach((category) => addCategoryOptions('option', category));
@@ -71,7 +72,41 @@ const clearOptions = () => {
   });
 };
 
+// Adiciona os títulos das categorias de imagens dos pets na página
+const addPetsTitles = (petType) => {
+  petType.forEach((category) => {
+    const headingElement = document.createElement('h2');
+
+    headingElement.innerText = category.toUpperCase();
+    headingElement.className = 'categoryTitle';
+    
+    locationOfImages.appendChild(headingElement);
+
+    addImages(pets[category], category);
+  });
+}
+
+// Adiciona as imagens dos pets na página
+const addImages = (arrayCategory, category) => {
+  arrayCategory.forEach((pet) => {
+    const div = document.createElement('div');
+    const image = document.createElement('img');
+
+    image.className = category;
+    image.id = pet.id;
+    image.src = pet.image;
+
+    div.appendChild(image);
+    locationOfImages.appendChild(div);
+
+    console.log(div);
+    console.log(image);
+  });
+}
+
+
 window.onload = () => {
   loops(categories);
   categoryClicked();
+  addPetsTitles(categories);
 }
