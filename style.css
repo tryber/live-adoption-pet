@@ -39,7 +39,7 @@ main section {
 }
 
 aside {
-  width: 35%;
+  width: 33%;
   background-color: rgb(183, 183, 183);
   min-height: 660px;
   display: flex;
@@ -61,4 +61,27 @@ select {
 
 #pictures {
   width: 65%;
+}
+
+#images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#images div img {
+  width: 200px;
+  padding: 10px;
+}
+
+.categoryTitle {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0px;
+}
+
+#pictures h4 {
+  text-align: center;
+  color: rgb(132, 132, 132);
+  font-size: 14px;
 }
