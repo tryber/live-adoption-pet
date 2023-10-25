@@ -21,6 +21,14 @@ const addCategoryOptions = (element, petCategory) => {
 const categoryClicked = () => {
   category.addEventListener('change', () => {
     if (category.value !== 'category') {
+      clearMainTitles();
+      clearMainImages();
+
+      const selectCategory = document.querySelector('#category').value;
+      const array = [];
+      array.push(selectCategory);
+      addPetsTitles(array);
+
       selects.forEach((select) => select.disabled = false);
       addOptionsToSelects();
     } else {
@@ -145,10 +153,43 @@ const addInfo = (id, className) => {
   temperamentInfo.innerText = `Temperamento: ${object.temperament}`;
 }
 
+// Limpa os títulos da página
+const clearMainTitles = () => {
+  const mainTitles = document.querySelectorAll('.categoryTitle');
+  mainTitles.forEach((title) => title.remove());
+}
+
+// Limpa as imagens da página
+const clearMainImages = () => {
+  const mainImages = document.querySelectorAll('#images div');
+  mainImages.forEach((image) => image.remove());
+}
+
+// // Faz o filtro dos pets e adiciona na página
+// const filterPets = () => {
+//   const newSelects = [...selects].filter((select) => select.id !== 'category');
+
+//   newSelects.forEach((newSelect) => {
+//     newSelect.addEventListener('change', () => {
+//       const item = newSelect.value;
+//       const selectedCategory = document.querySelector('#category').value;
+
+//       const arrayNewPets = pets[selectedCategory].filter((pet) => pet[newSelect.id] === item);
+
+//       clearOptions();
+//       addOptionsToSelects();
+//       clearMainImages();
+
+//       addImages(arrayNewPets, selectedCategory);
+//     });
+//   });
+// }
+
 
 window.onload = () => {
   loops(categories);
   categoryClicked();
   addPetsTitles(categories);
   captureImage();
+  // filterPets();
 }
