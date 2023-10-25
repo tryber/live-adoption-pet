@@ -107,6 +107,8 @@ const addImages = (arrayCategory, category) => {
     div.appendChild(image);
     locationOfImages.appendChild(div);
   });
+  
+  captureImage();
 }
 
 // Captura o id do elemento da imagem clicada
@@ -165,31 +167,30 @@ const clearMainImages = () => {
   mainImages.forEach((image) => image.remove());
 }
 
-// // Faz o filtro dos pets e adiciona na página
-// const filterPets = () => {
-//   const newSelects = [...selects].filter((select) => select.id !== 'category');
 
-//   newSelects.forEach((newSelect) => {
-//     newSelect.addEventListener('change', () => {
-//       const item = newSelect.value;
-//       const selectedCategory = document.querySelector('#category').value;
+// Faz o filtro dos pets e adiciona na página
+const filterPets = () => {
+  const newSelects = [...selects].filter((select) => select.id !== 'category');
 
-//       const arrayNewPets = pets[selectedCategory].filter((pet) => pet[newSelect.id] === item);
+  newSelects.forEach((newSelect) => {
+    newSelect.addEventListener('change', () => {
+      const item = newSelect.value;
+      const selectedCategory = document.querySelector('#category').value;
 
-//       clearOptions();
-//       addOptionsToSelects();
-//       clearMainImages();
+      const arrayNewPets = pets[selectedCategory].filter((pet) => pet[newSelect.id] === item);
 
-//       addImages(arrayNewPets, selectedCategory);
-//     });
-//   });
-// }
+      clearOptions();
+      addOptionsToSelects();
+      clearMainImages();
 
+      addImages(arrayNewPets, selectedCategory);
+    });
+  });
+}
 
 window.onload = () => {
   loops(categories);
   categoryClicked();
   addPetsTitles(categories);
-  captureImage();
-  // filterPets();
+  filterPets();
 }
