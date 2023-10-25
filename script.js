@@ -154,6 +154,7 @@ const addInfo = (id, className) => {
   temperamentInfo.innerText = `Temperamento: ${object.temperament}`;
 
   addToForm();
+  addLocalStorage();
 }
 
 // Limpa os títulos da página
@@ -211,6 +212,37 @@ const addToForm = () => {
   form.appendChild(button);
 }
 
+// Adiciona e-mail e informações do pet no local storage
+const addLocalStorage = () => {
+  const button = document.querySelector('button');
+  
+  button.addEventListener('click', (event) => {
+    const adoptionObject = generateObject();
+    event.preventDefault();
+
+    localStorage.setItem('adoptionInfo', JSON.stringify(adoptionObject));
+
+    console.log(adoptionObject);
+  });
+}
+
+// Gera o objeto que vai para o local storage
+const generateObject = () => {
+  const inputValue = document.querySelector('input').value;
+
+  const [pictureSelected, nameInfo, birthInfo, breedInfo, colorInfo, sizeInfo, temperamentInfo] = arrayInfo();
+
+  return {
+    name: nameInfo.innerText,
+    birth_date: birthInfo.innerText,
+    breed: breedInfo.innerText,
+    color: colorInfo.innerText,
+    size: sizeInfo.innerText,
+    temperament: temperamentInfo.innerText,
+    picture: pictureSelected.src,
+    email: inputValue,
+  }
+}
 
 window.onload = () => {
   loops(categories);
