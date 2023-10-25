@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgb(36, 47, 207);
+  padding: 0px 20px;
+  border-bottom: black 3px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: burlywood;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+header nav a {
+  color: white;
+  padding: 0px 10px;
+  text-decoration: none;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🐶</text></svg>") 16 0, auto;
+}
