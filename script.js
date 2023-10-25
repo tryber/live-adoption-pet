@@ -43,6 +43,7 @@ const arrayData = (petCategory, key) => {
 
 // Adiciona as opções nos demais selects
 const addOptionsToSelects = () => {
+  clearOptions();
   arrayOfSomeKeys.forEach((key) => {
     const categorySelected = document.querySelector('#category').value;
     const selectProperty = document.querySelector(`#${key}`);
@@ -55,6 +56,20 @@ const addOptionsToSelects = () => {
     });
   });
 }
+
+// Limpa os selects quando selecionamos outra categoria
+const clearOptions = () => {
+  selects.forEach((select, index) => {
+    if (index !== 0) {
+      const optionBySelect = [...select.options];
+      optionBySelect.forEach((option, index) => {
+        if (index !== 0) {
+          option.remove();
+        }
+      });
+    };
+  });
+};
 
 window.onload = () => {
   loops(categories);
