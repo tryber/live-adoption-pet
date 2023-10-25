@@ -13,7 +13,7 @@ const addCategoryOptions = (element, petCategory) => {
 
   optionElement.innerText = petCategory[0].toUpperCase() + petCategory.substring(1);
   optionElement.value = petCategory;
-  
+
   category.appendChild(optionElement);
 }
 
@@ -58,7 +58,7 @@ const addOptionsToSelects = () => {
     const categorySelected = document.querySelector('#category').value;
     const selectProperty = document.querySelector(`#${key}`);
     const array = arrayData(categorySelected, key);
-    
+
     array.forEach((feature) => {
       const optionElement = document.createElement('option');
       optionElement.innerText = feature;
@@ -88,7 +88,7 @@ const addPetsTitles = (petType) => {
 
     headingElement.innerText = category.toUpperCase();
     headingElement.className = 'categoryTitle';
-    
+
     locationOfImages.appendChild(headingElement);
 
     addImages(pets[category], category);
@@ -113,7 +113,7 @@ const addImages = (arrayCategory, category) => {
 // Captura o id do elemento da imagem clicada
 const captureImage = () => {
   const pictures = document.querySelectorAll('#pictures div img');
-  
+
   pictures.forEach((picture) => {
     picture.addEventListener('click', (event) => {
       const capturedId = event.target.id;
@@ -140,10 +140,8 @@ const arrayInfo = () => {
 // Adiciona as informações do pet selecionado no aside
 const addInfo = (id, className) => {
   const [pictureSelected, nameInfo, birthInfo, breedInfo, colorInfo, sizeInfo, temperamentInfo] = arrayInfo();
-  
-  const object = pets[className].find((pet) => {
-    return pet.id === parseInt(id);
-  });
+
+  const object = pets[className].find((pet) => pet.id === parseInt(id));
 
   pictureSelected.src = object.image;
   nameInfo.innerText = `Nome: ${object.name}`;
@@ -158,16 +156,12 @@ const addInfo = (id, className) => {
 }
 
 // Limpa os títulos da página
-const clearMainTitles = () => {
-  const mainTitles = document.querySelectorAll('.categoryTitle');
-  mainTitles.forEach((title) => title.remove());
-}
+const clearMainTitles = () => document.querySelectorAll('.categoryTitle')
+  .forEach((title) => title.remove());
 
 // Limpa as imagens da página
-const clearMainImages = () => {
-  const mainImages = document.querySelectorAll('#images div');
-  mainImages.forEach((image) => image.remove());
-}
+const clearMainImages = () => document.querySelectorAll('#images div')
+  .forEach((image) => image.remove());
 
 
 // Faz o filtro dos pets e adiciona na página
@@ -215,7 +209,7 @@ const addToForm = () => {
 // Adiciona e-mail e informações do pet no local storage
 const addLocalStorage = () => {
   const button = document.querySelector('button');
-  
+
   button.addEventListener('click', (event) => {
     const adoptionObject = generateObject();
     event.preventDefault();
