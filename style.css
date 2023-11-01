@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  /* border: 2px solid red; */
+  font-family: 'Playpen Sans', cursive;
+  font-weight: 100;
+  padding: 0px 20px;
+  border-bottom: rgb(157, 156, 156) 1px solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+header div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: antiquewhite;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+header nav a {
+  color: rgb(24, 24, 24);
+  font-size: 25px;
+  padding: 0px 10px;
+  text-decoration: none;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🐶</text></svg>") 16 0, auto;
+}
