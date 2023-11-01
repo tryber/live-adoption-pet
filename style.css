@@ -1,15 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100;400&display=swap');
+
 * {
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: rgb(36, 47, 207);
+  font-family: 'Playpen Sans', cursive;
+  font-weight: 100;
+  /* background-color: rgb(36, 47, 207); */
   padding: 0px 20px;
-  border-bottom: black 3px solid;
+  border-bottom: rgb(238, 238, 238) 1px solid;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  user-select: none;
 }
 
 header div {
@@ -23,9 +28,11 @@ header div {
 }
 
 header nav a {
-  color: white;
+  color: rgb(24, 24, 24);
+  font-size: 25px;
   padding: 0px 10px;
   text-decoration: none;
+  /* position: relative; */
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🐶</text></svg>") 16 0, auto;
 }
 
@@ -40,7 +47,7 @@ main section {
 
 aside {
   width: 33%;
-  background-color: rgb(183, 183, 183);
+  /* background-color: rgb(183, 183, 183); */
   min-height: 660px;
   display: flex;
   flex-direction: column;
@@ -56,7 +63,14 @@ aside {
 select {
   width: 180px;
   margin: 0px 3px 10px;
+  padding: 8px 4px;
+  border-radius: 4px;
+  border: 1px solid silver;
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🐶</text></svg>") 16 0, auto;
+}
+
+select:focus {
+  outline: 1px solid rgb(22, 111, 236);
 }
 
 #pictures {
@@ -70,8 +84,17 @@ select {
 }
 
 #images div img {
-  width: 200px;
+  width: 150px;
   padding: 10px;
+  object-fit: cover;
+  height: 150px;
+  transition: transform 400ms ease;
+  cursor: pointer;
+}
+
+#images div img:hover {
+  transform: scale(1.1);
+  background-color: rgb(255, 153, 0);
 }
 
 .categoryTitle {
@@ -93,7 +116,9 @@ select {
 }
 
 #info div img {
-  width: 380px;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
   border-radius: 100px;
 }
 
