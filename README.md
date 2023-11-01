@@ -14,7 +14,7 @@ Os conteúdos desta aplicação são a aplicação dos conteúdos ensinados no m
 - TESTES UNITÁRIOS
 - MÉTODOS DE ARRAY
 
-[🎥 LINK DA LIVE]()
+[🎥 LINK DA LIVE](https://www.youtube.com/watch?v=TaoCIebEoAU)
 
 [SITE DA TRYBE](https://www.betrybe.com/)
 
