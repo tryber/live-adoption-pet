@@ -34,3 +34,41 @@ header nav a {
   text-decoration: none;
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🐶</text></svg>") 16 0, auto;
 }
+
+main {
+  display: flex;
+  justify-content: space-around;
+}
+
+main section {
+  padding: 30px 40px 0px;
+}
+
+aside {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#selects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+select {
+  border: 1px solid silver;
+  width: 180px;
+  margin: 8px 4px;
+  border-radius: 5px;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🐶</text></svg>") 16 0, auto;
+}
+
+select:focus {
+  outline: 1px solid rgb(22, 111, 236);
+}
+
+#pictures {
+  width: 65%;
+}
