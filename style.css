@@ -72,3 +72,52 @@ select:focus {
 #pictures {
   width: 65%;
 }
+
+#images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#images div img {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+#images div img:hover {
+  transform: scale(1.1);
+  background-color: rgb(216, 169, 74);
+  cursor: pointer;
+}
+
+.categoryTitle {
+  width: 100%;
+  margin: 20px 0px;
+  text-align: center;
+}
+
+#pictures h4 {
+  text-align: center;
+  color: rgb(163, 167, 167);
+  font-size: 14px;
+}
+
+#info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#info div img {
+  width: 350px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 80px;
+}
+
+#info div {
+  margin-bottom: 7px;
+}
